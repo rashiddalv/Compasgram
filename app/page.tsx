@@ -1,6 +1,11 @@
 import Particle from "@/components/Particle";
 import Image from "next/image";
+import axios from 'axios';
 
+const fetchData = async () => {
+  const response = await axios.get('http://localhost:8000/api/endpoint');
+  console.log(response.data);
+};
 export default function Home() {
   return (
     <main className="flex items-center h-screen relative bg-cover bg-[url('/assets/bg-explosion.png')]">

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { NavLinks } from "@/constants";
-import Link from "next/link";
+import Link from 'next/link';
 import Transition from "./Transition";
 
 const Sidebar = () => {
@@ -42,11 +42,11 @@ const Sidebar = () => {
               href={link.link}
               onClick={() => setIsActive(link.name)}
             >
-              {React.createElement(link.icon, {
-                className: `w-[28px] h-[28px] ${
+              <link.icon
+                className={`w-[28px] h-[28px] ${
                   isActive === link.name ? "text-orange-500" : "text-white"
-                }`,
-              })}
+                }`}
+              />
             </Link>
           ))}
         </div>
